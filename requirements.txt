@@ -1,0 +1,8 @@
+python-decouple
+psycopg2-binary
+Flask
+jsonify
+requests
+Response
+flask_cors
+pymongo

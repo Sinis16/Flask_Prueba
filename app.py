@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
-from pymongo import MongoCLient
+from pymongo import MongoClient
 import json
 from bson.objectid import ObjectId
 
@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 CORS(app, origins=["*"])
 
-#client = MongoClient('localhost', 27017)
-client = MongoClient('mongodb://<sinis_gay>:<gato>@<34.42.241.216>:5000/')
+# client = MongoClient('localhost', 27017)
+client = MongoClient('mongodb://documents_user:trinity2503@10.128.0.7:27017')
 
 db = client['Documentos']
 mycol = db['docs']
@@ -21,27 +21,28 @@ def get():
     a = []
     for d in data:
         b = {
-            "id" : str(d["_d"]),
+            "id": str(d["_id"]),
+            "link": str(d["link"]),
         }
         a.append(b)
-    return {'message' : a}
+    return {'message': a}
 
 
-
-@app.route('/documents', methods=['POST']) 
+@app.route('/Postdocuments', methods=['POST'])
 def add_user():
     data = request.get_json()
     print(data)
-    if data :
+    if data:
         d = mycol.insert_one(data)
         print(d)
-        response = jsonify({'message': "Documento agregado de forma exitosa", "id" : str(d.inserted_id)})
-    else :
-        response = Response("Que sapo", status = 400, minetype = 'application/json')
-    return Response
-
+        response = jsonify(
+            {'message': "Documento agregado de forma exitosa", "id": str(d.inserted_id)})
+    else:
+        response = Response("Que sapo", status=400,
+                            minetype='application/json')
+    return response
 
 
 if __name__ == "__main__":
-
     app.run(host='0.0.0.0', port=8080, debug=True)
+    print("hola")
