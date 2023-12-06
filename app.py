@@ -21,7 +21,7 @@ def get():
     a = []
     for d in data:
         b = {
-            "id": str(d["_d"]),
+            "id": str(d["_id"]),
         }
         a.append(b)
     return {'message': a}
@@ -39,7 +39,7 @@ def add_user():
     else:
         response = Response("Que sapo", status=400,
                             minetype='application/json')
-    return Response
+    return response
 
 
 if __name__ == "__main__":
