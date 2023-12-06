@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app, origins=["*"])
 
 # client = MongoClient('localhost', 27017)
-client = MongoClient('mongodb://<sinis_gay>:<gato>@<10.128.0.10>:27017/')
+client = MongoClient('mongodb://sinis_gay:gato@10.128.0.10:27017')
 
 db = client['Documentos']
 mycol = db['docs']
