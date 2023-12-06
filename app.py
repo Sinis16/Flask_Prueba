@@ -1,10 +1,10 @@
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
 from pymongo import MongoClient
-import json
+import Json
 from bson.objectid import ObjectId
 
-app = Flask(name)
+app = Flask(__name__)
 
 CORS(app, origins=["*"])
 
@@ -42,6 +42,6 @@ def add_user():
     return Response
 
 
-if name == "main":
+if __name__ == "main":
 
     app.run(host='0.0.0.0', port=8080, debug=True)
