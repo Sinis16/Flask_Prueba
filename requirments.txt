@@ -6,4 +6,3 @@ requests
 Response
 flask_cors
 pymongo
-bson.objectid
