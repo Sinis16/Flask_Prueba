@@ -45,3 +45,4 @@ def add_user():
 if __name__ == "main":
     app.config.from_object(config['development'])
     app.run(host='0.0.0.0', port=8080, debug=True)
+    print("hola")
