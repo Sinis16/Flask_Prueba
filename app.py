@@ -22,6 +22,7 @@ def get():
     for d in data:
         b = {
             "id": str(d["_id"]),
+            "link": str(d["link"]),
         }
         a.append(b)
     return {'message': a}
