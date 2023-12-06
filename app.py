@@ -6,7 +6,7 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-CORS(app, origins=["*"])
+# CORS(app, origins=["*"])
 
 # client = MongoClient('localhost', 27017)
 client = MongoClient('mongodb://<sinis_gay>:<gato>@<10.128.0.10>:21707/')
@@ -43,5 +43,5 @@ def add_user():
 
 
 if __name__ == "main":
-
+    app.config.from_object(config['development'])
     app.run(host='0.0.0.0', port=8080, debug=True)
