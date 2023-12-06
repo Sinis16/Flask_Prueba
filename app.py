@@ -27,7 +27,7 @@ def get():
     return {'message': a}
 
 
-@app.route('/documents', methods=['POST'])
+@app.route('/Postdocuments', methods=['POST'])
 def add_user():
     data = request.get_json()
     print(data)
@@ -44,4 +44,4 @@ def add_user():
 
 if __name__ == "main":
 
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
