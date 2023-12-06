@@ -4,4 +4,5 @@ Flask
 jsonify
 requests
 Response
+flask_cors
 pymongo
