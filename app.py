@@ -4,12 +4,12 @@ from pymongo import MongoCLient
 import json
 from bson.objectid import ObjectId
 
-app = Flask(__name__)
+app = Flask(name)
 
 CORS(app, origins=["*"])
 
 # client = MongoClient('localhost', 27017)
-client = MongoClient('mongodb://<sinis_gay>:<gato>@<34.42.241.216>:5000/')
+client = MongoClient('mongodb://<sinis_gay>:<gato>@<10.128.0.10>:21707/')
 
 db = client['Documentos']
 mycol = db['docs']
@@ -42,6 +42,6 @@ def add_user():
     return Response
 
 
-if __name__ == "__main__":
+if name == "main":
 
     app.run(host='0.0.0.0', port=8080, debug=True)
