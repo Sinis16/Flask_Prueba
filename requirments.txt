@@ -1,0 +1,10 @@
+python-decouple
+psycopg2-binary
+Flask
+jsonify
+request
+Response
+flask_cors
+pymongo
+json
+bson.objectid
